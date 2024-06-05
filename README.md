@@ -1,114 +1,179 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Jen's Chic Boutique Web Development Project
 
-Welcome USER_NAME,
+Welcome to the Jen's Chic Boutique web development project repository! This project is designed to provide a comprehensive e-commerce platform for managing product items and user accounts.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![alt text](img1.png)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 28, 2024**
+![alt text](img2.png)
 
-## Gitpod Reminders
+![alt text](img3.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Table of Contents
+- [Introduction](#introduction)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Manual Testing](#manual-testing)
+- [Deployment](#deployment)
+- [User Stories](#user-stories)
+- [Future Features](#future-features)
+- [Bugs](#bugs)
+- [Credits](#credits)
 
-`python3 -m http.server`
+## Introduction
+Jen's Chic Boutique is a web development project designed to make managing boutique items and user accounts easy. It features a user-friendly interface for customers. 
 
-A blue button should appear to click: _Make Public_,
+## Technologies Used
+The project is built using the following technologies:
 
-Another blue button should appear to click: _Open Browser_.
+- Django
+- Django AllAuth
+- HTML/CSS/JavaScript 
+- Git/GitHub (Version Control)
+- Heroku (Cloud-based Platform)
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+## Project Structure
+- **Root Directory**: Contains the main Django project files, `README.md`, and additional helper files (HTML, CSS, JS, IMG).
+- **requirements.txt**: Python dependencies list.
+- **runtime.txt**: The targeted Python runtime.
+- **Django Project**:
+  - **jenschicboutique**: Contains the Django project settings and configurations.
+- **Django Apps**:
+  - **bag**: Handles the boutique items and orders.
+  - **wishlist**: Manages user accounts and authentication.
+- **Static files**:
+  - **static**: Holds CSS, JavaScript, and other static files.
+- **Templates**:
+  - **templates**: Contains HTML template files.
+- **404 Page Implemented**
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+![Project Structure]
 
-To log into the Heroku toolbelt CLI:
+## Installation
+To set up the project locally, follow these steps:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/jen-chic-boutique.git
+   cd jen-chic-boutique
+   ```
+2. Install Django and add the package to the `requirements.txt` file:
+   ```bash
+   pip3 install 'django<4’
+   pip3 freeze --local > requirements.txt
+   ```
+3. Create a new Django project and app:
+   ```bash
+   django-admin startproject jenschicboutique .
+   python3 manage.py startapp bag
+   python3 manage.py startapp wishlist 
+   ```
+4. Add the apps to the `INSTALLED_APPS` in `settings.py`.
+5. After adding models, run migrations:
+   ```bash
+   python3 manage.py migrate
+   ```
+6. Run the development server:
+   ```bash
+   python3 manage.py runserver
+   ```
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+These steps should prepare your environment. 
 
-------
+## Usage
+On the website, users can perform the following actions:
 
-## Release History
+- **Browse Items**: Users can browse product items, search items, choose item’s size, manage bag by adding and removing, 
+- **Wishlist**: Users can add items to their wishlist. 
+- **Review**: Users can leave a review. 
+- **Order Management**: Users can add items to their bag and manage their shopping bag.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![alt text](wish.png)
 
-**May 28 2024:** Fix Mongo and Links installs
+## Manual Testing
+I have tested this website myself to make sure everything works well and it's easy to use by doing the following:
 
-**April 26 2024:** Update node version to 16
+- **Clicked around different pages and features a few times to make sure everything works smoothly.**
+- **Tried signing up, logging in, and logging out to see if it all works like it should.**
+- **Made sure I could browse items and manage my bag.**
+- **Looked at the website on both my computer and phone to make sure it looks good and works right on both.**
+- **Checked code for any major bugs.**
+- **Tested out all the important features to make sure it all flows smoothly for users.**
+- **Kept track of any bugs or issues I ran into while testing and made sure to fix them up.**
 
-**September 20 2023:** Update Python version to 3.9.17.
+## Deployment to Heroku
+To deploy your project to Heroku, follow these steps:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+1. **Create an account and verify it**:
+   - Sign up for a Heroku account and verify your email address.
+2. **Create a new app**:
+   - Navigate to your Heroku dashboard and create a new app with a unique name.
+3. **Update your code for deployment**:
+   - Install `gunicorn` and add it to `requirements.txt`:
+     ```bash
+     pip3 install gunicorn~=20.1
+     pip3 freeze --local > requirements.txt
+     ```
+4. **Enable GitHub integration**:
+   - In your app's dashboard, go to the Deploy tab.
+   - In the Deployment method section, enable GitHub integration by clicking on "Connect to GitHub".
+5. **Select your repository**:
+   - Start typing your project repository name into the search box and click Search.
+   - Click on the GitHub repository you want to deploy from.
+6. **Initiate deployment**:
+   - Scroll to the bottom of the page and click "Deploy Branch" to start a manual deployment of the main branch.
+7. **View your deployed project**:
+   - Once the deployment process is complete, click on "Open app" to view your deployed project.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![Deploy to Heroku]
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## User Stories
+### User
+- I can browse available items.
+- I can filter items by name/desc/asc/ price range.
+- I can add items to my bag.
+- I can remove items from my bag.
+- I can update items in my bag. 
+- I can see the price updating simultaneously when I edit items in the bag.
+- I can add items to wishlist 
+- I can leave a review of an item 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![alt text](review1.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![alt text](bag.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Administrator
+- I can manage product items.
+- I can view and manage customer orders.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![alt text](<user story.png>)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Future Features
+- **Order Tracking**: Provide order tracking capabilities.
+- **Promotion codes**: Add functionality for promotional codes 
+- **Wishlist**: Add a “Add to bag” button to Wishlist. Verify if items are already added to Wishlist.
+- **Review** Check if the user has already purchased that item before leaving a review.
+- **Registration**: Users can register for an account.
+- **Logout**: Users can log out of their accounts.
+- Order history 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Bugs
+- Users cannot view their order history.
+- Users cannot manage their profile.
+- Registration not working for users 
+- Logout not working for users 
+- CSS and static images not working
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Difficulties Encountered
+- Encountered issues with Jquery. Managed to resolve them by following updated documentation. 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Credits
+- Source of  image: Product images by Kaggle.com
+- Source of icons: Fontawesome
+- Based on the Code Institute Boutique Ado walkthrough 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+## Observation 
+- To show the css and static images to my project, I would need an Amazon account to connect to AWS swervices, as demonstrated in the walkthrough. However,I wasn't able to proceed with that step. Therefore the project hasn't got any css or images. If the project is ran on Debug mode, css and static images are shown.
