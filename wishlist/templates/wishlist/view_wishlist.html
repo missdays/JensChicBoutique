@@ -15,11 +15,24 @@
         {% for item in wishlist_items %}
             <div class="col-md-3 mb-4">
                 <div class="card wishlist-product">
-                    <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
+                    {% if item.image %}
+                    <a href="{% url 'product_detail' item.id %}">
+                        <img class="card-img-top img-fluid" src="{{ item.image.url }}" alt="{{ item.name }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'product_detail' item.id %}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                            alt="{{ item.name }}">
+                    </a>
+                    {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ item.name }}</h5>
                         <p class="card-text">Price: ${{ item.price }}</p>
                         <p class="card-text">Category: {{ item.category }}</p>
+                        <div>
+                            <a href="{% url 'product_detail' item.id %}" class="btn btn-black btn-sm rounded-0 text-uppercase mt-5">View Product</a>
+                            <a href="{% url 'wishlist:remove_from_wishlist' item.id %}" class="btn btn-danger btn-sm rounded-0 text-uppercase mt-5">Remove</a>
+                        </div>
                     </div>
                 </div>
             </div>

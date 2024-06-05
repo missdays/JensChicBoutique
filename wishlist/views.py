@@ -18,3 +18,13 @@ def add_to_wishlist(request, product_id):
         request.session['wishlist'] = wishlist
 
     return redirect('wishlist:view_wishlist')
+
+@login_required
+def remove_from_wishlist(request, product_id):
+    wishlist = request.session.get('wishlist', [])
+    
+    if product_id in wishlist:
+        wishlist.remove(product_id)
+        request.session['wishlist'] = wishlist
+
+    return redirect('wishlist:view_wishlist')
