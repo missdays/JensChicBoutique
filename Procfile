@@ -1,1 +1,1 @@
-web: gunicorn jenschicboutique.wsgi:application
+web: gunicorn jenschicboutique:app
