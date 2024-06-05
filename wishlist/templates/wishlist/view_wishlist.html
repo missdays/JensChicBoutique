@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Your Wishlist</h1>
+    <div class="row">
+        {% for item in wishlist_items %}
+            <div class="col-md-3 mb-4">
+                <div class="card wishlist-product">
+                    <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <p class="card-text">Price: ${{ item.price }}</p>
+                        <p class="card-text">Category: {{ item.category }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
