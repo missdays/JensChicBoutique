@@ -91,6 +91,8 @@ On the website, users can perform the following actions:
 - **Review**: Users can leave a review. 
 - **Order Management**: Users can add items to their bag and manage their shopping bag.
 
+![alt text](mindmap.jpeg)
+
 ![alt text](wish.png)
 
 ## Manual Testing
@@ -150,6 +152,9 @@ To deploy your project to Heroku, follow these steps:
 - I can view and manage customer orders.
 
 ![alt text](<user story.png>)
+
+### Marketing
+![alt text](Marketing.png)
 
 ## Future Features
 - **Order Tracking**: Provide order tracking capabilities.
