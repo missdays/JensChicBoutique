@@ -1,1 +1,1 @@
-web: gunicorn jenschicboutique:app
+web: gunicorn jenschicboutique:application
