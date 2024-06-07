@@ -200,6 +200,3 @@ For the tester team, you can use the card Stripe provides for testing purposes. 
 - Source of  image: Product images by Kaggle.com
 - Source of icons: Fontawesome
 - Based on the Code Institute Boutique Ado walkthrough 
-
-## Observation 
-- To show the css and static images to my project, I would need an Amazon account to connect to AWS services, as demonstrated in the walkthrough. However,I wasn't able to proceed with that step. Therefore the project hasn't got any css or images. If the project is ran on Debug mode, css and static images are shown.
